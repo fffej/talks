@@ -51,7 +51,6 @@
 - `alter` has to take place within a transaction.  STM composes
 
 ~~~~ {#mycode .clojure}
-
     (def *all-accounts* (take 50000 (repeatedly #(ref (rand-int 100)))))
     (defn total
        "Sum all accounts"
@@ -62,8 +61,3 @@
 
 - If any references within the account change during the calculation, STM automatically retries
 
-# Self's Prototype
-- Prototypical Languages
-
-# Erlang's Concurrency Model
-- Concurrency
