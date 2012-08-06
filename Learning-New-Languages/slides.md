@@ -8,6 +8,20 @@
 
 # Lisp's Macro System
 - Homoiconicity
+    - (+ 1 1) applies the function + to the numbers 1 and 1
+    - (+ 1 1) is a list of three elements
+- Syntax of Lisp is extensible, add new control structures yourself!
+
+~~~~ {#mycode .lisp}
+    (defmacro while (test &rest body)
+        "Repeat body while test is true."
+        (list* 'loop
+            (list 'unless test '(return nil))
+            body)) 
+~~~~
+
+- Can capture syntactic duplication
+- Code-generation
 
 # Haskell's Type System
 - Haskell is a strongly typed language
