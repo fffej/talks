@@ -1,7 +1,7 @@
 all: slides.html
 
 slides.html: slides.md
-	pandoc --offline -s -t slidy -o $@ $<
+	pandoc --self-contained -s -t slidy -o $@ $<
 
 clean:
 	-rm -f slides.html
