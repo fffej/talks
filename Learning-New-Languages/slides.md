@@ -65,7 +65,8 @@
 - `alter` has to take place within a transaction.  STM composes
 
 ~~~~ {#mycode .clojure}
-    (def *all-accounts* (take 50000 (repeatedly #(ref (rand-int 100)))))
+    (def *all-accounts* (take 50000 
+    	 (repeatedly #(ref (rand-int 100)))))
     (defn total
        "Sum all accounts"
        [accounts]

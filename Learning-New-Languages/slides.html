@@ -101,7 +101,8 @@ Jeff Foster
 <ul>
 <li><code>alter</code> has to take place within a transaction. STM composes</li>
 </ul>
-<pre class="sourceCode clojure" id="mycode"><code class="sourceCode clojure">    (<span class="kw">def</span><span class="fu"> *all-accounts* </span>(<span class="kw">take</span> <span class="dv">50000</span> (<span class="kw">repeatedly</span> #(<span class="kw">ref</span> (<span class="kw">rand-int</span> <span class="dv">100</span>)))))
+<pre class="sourceCode clojure" id="mycode"><code class="sourceCode clojure">    (<span class="kw">def</span><span class="fu"> *all-accounts* </span>(<span class="kw">take</span> <span class="dv">50000</span> 
+         (<span class="kw">repeatedly</span> #(<span class="kw">ref</span> (<span class="kw">rand-int</span> <span class="dv">100</span>)))))
     (<span class="kw">defn</span><span class="fu"> total</span>
        <span class="st">&quot;Sum all accounts&quot;</span>
        [accounts]
