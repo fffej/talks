@@ -1,0 +1,23 @@
+% Learning to Love Legacy Code
+% Jeff Foster
+
+# What is Legacy Code?
+Aim of this section is to define what legacy code is
+Final destination is quite broad
+Legacy code is code that you aren't confident in changing
+
+# What's it like working in a legacy code base
+
+Aim of this section is to describe just how difficult the cost to change is.  
+
+Fear of change
+
+just one more parameter won't hurt
+
+Code that reads sensibly, but doesn't do what it says
+
+# How does Legacy Code get created?
+Is it because people are stupid?  No! People make the best decisions with the information they have
+
+Initial design was good, changes in requirements necessitated changes in the design, but either changes not considered (comfort zone?) or the perceived cost to change not too much (perhaps exploring a feature area that was unforeseen but then took off)
+
