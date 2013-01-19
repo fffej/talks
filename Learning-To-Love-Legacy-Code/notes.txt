@@ -1,10 +1,42 @@
 % Learning to Love Legacy Code
 % Jeff Foster
 
+* Aim - see the good in legacy code
+* What is legacy code?
+* What's it like working in legacy code?  Why is it painful?
+* So how did we get to legacy code? 
+* Why not just rewrite everything?
+* Finding the joy
+** You're working on something successful!
+** You've got the wisdom of the ages in the code base!
+** Find the true meaning of patterns
+** Set for life (maintaining code forever)
+* Conclusion
+
+# Aim
+
+The aim of this talk is to try and see the good in legacy code.  We always beat up legacy code for the WTF moments, but working with
+legacy code can be a great opportunity to learn new skills.
+
+
 # What is Legacy Code?
 Aim of this section is to define what legacy code is
 Final destination is quite broad
 Legacy code is code that you aren't confident in changing
+
+# How does Legacy Code get created?
+
+Is it because people are stupid?  No! People make the best decisions with the information they have
+
+Initial design was good, changes in requirements necessitated changes
+in the design, but either changes not considered (comfort zone?) or
+the perceived cost to change not too much (perhaps exploring a feature
+area that was unforeseen but then took off)
+
+Perhaps the original team left and the design wasn't communicated?
+
+Perhaps the original team got too comfortable with the design and were
+reluctant to change?
 
 # What's it like working in a legacy code base
 
@@ -16,8 +48,51 @@ just one more parameter won't hurt
 
 Code that reads sensibly, but doesn't do what it says
 
-# How does Legacy Code get created?
-Is it because people are stupid?  No! People make the best decisions with the information they have
+~~~~
+  // v1
+  if (!fileExists("foo")) printf("Exists");
 
-Initial design was good, changes in requirements necessitated changes in the design, but either changes not considered (comfort zone?) or the perceived cost to change not too much (perhaps exploring a feature area that was unforeseen but then took off)
+  // WTF?
+  #define FILE_EXIST_SUCCESS 0
+
+  // sanity restored
+  if (FILE_EXIST_SUCCESS == fileExists("foo")) printf("Exists"); //
+~~~~
+
+70% of software development is fixing / enhancing existing software.
+
+# Joy from legacy code
+
+# Successful
+
+In order to still be around and warrant people working on it, the code
+must be successful with users.
+
+# Domain Knowledge
+
+The code might be difficult to understand, but in amongst that 1.4
+million lines of code are important details.  Somewhere in that code
+subtle feature details are included that are all to easy to overlook
+elsewhere (e.g. weird file handling on a particular UNIX platform).
+
+# trying out new designs
+
+# Learning
+
+As a new developer, you're bombarded (hopefully) with information
+about patterns, unit testing and so on.  It's common to view this as
+over-abstraction - why on earth would I need a factory?  Legacy code
+bases provide opportunities to rediscover these patterns for yourself
+in a proper context
+
+"The most amazing thing was that I laerned as much in a maintenance
+month three years into a project as I did in a programming month
+before release. In fact, I came to think of the practices we'd put in
+place as a safety net that made maintenance a safe place to learn"
+(Ward Cunningham)
+
+## Learning through tests
+
+## Learning through scratch refactorings
+
 
